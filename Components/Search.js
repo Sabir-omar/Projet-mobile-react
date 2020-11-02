@@ -56,7 +56,9 @@ class Search extends React.Component{
         this._loadFilms()
         })
     }
-
+    _displayDetailForFilm = (idFilm) => {
+        this.props.navigation.navigate("FilmDetail")
+      }
     render(){
         return(
             <View style={styles.main_container}>
@@ -72,6 +74,7 @@ class Search extends React.Component{
                             this._loadFilms()
                         }
                     }}
+                    renderItem={({item}) => <FilmItem film={item} _displayDetailForFilm={this._displayDetailForFilm}/>}
                 />
               {this._displayLoading()}
             </View>

@@ -1,13 +1,15 @@
-import React from 'react';
-import { StyleSheet, Text, View } from 'react-native';
-import Search from './Components/Search.js';
+import React from 'react'
+import Search from './Components/Search.js'
+import Navigation from './Navigation/Navigation'
+import { Provider } from 'react-redux'
+import Store from './Store/configureStore'
 
 export default class App extends React.Component {
-  render(){
+  render() {
     return (
-      <Search/>
-    );
+      <Provider store={Store}>
+        <Navigation/>
+      </Provider>
+    )
   }
-  
 }
-
